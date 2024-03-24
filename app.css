@@ -1,11 +1,11 @@
 :root {
-  --text-sm: clamp(1rem, 3vw, 1.5rem);
+  --text-sm: clamp(0.8rem, 3vw, 1.5rem);
   --text-md: clamp(1.5rem, 4vw, 2rem);
-  --text-lg: clamp(2rem, 5vw, 4rem);
+  --text-lg: clamp(2rem, 5vw, 3rem);
   --color-primary: hsl(160, 50%, 40%);
   --color-primary-dark: hsl(160, 50%, 20%);
   --color-on-primary: white;
-  --color-content: white;
+  --color-content: hsl(0, 0%, 90%);
   --color-on-content: black;
 }
 
@@ -25,6 +25,12 @@ body {
   background-position: center;
 }
 
+.content-container {
+  background-color: var(--color-content);
+  width: clamp(300px, 100%, 1200px);
+  height: 100%;
+}
+
 header,
 footer {
   width: 100%;
@@ -34,26 +40,30 @@ footer {
   background-color: hsla(0, 10%, 10%, 75%);
 }
 
-
 /**************
 /* NAV STYLES *
 ***************/
-nav {
+.nav {
   padding: 1em;
+  background-color: var(--color-primary-dark);
+
+  /* Used for making nav links fit on mobile. Collapsing toolbar would
+  be ideal, but this will work for now. */
+  column-gap: clamp(0.5em, 2vw, 3em);
+}
+
+.nav--transparent {
+  background-color: transparent;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: var(--color-primary);
   padding: 0.5em;
-  font-weight: bold;
-  margin-right: 0.5em;
   font-size: var(--text-sm);
+  color: var(--color-primary);
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
   transition: color 200ms, background-color 200ms;
-}
-
-.nav-link:last-of-type {
-  margin-right: 0;
 }
 
 .nav-link:hover,
@@ -92,6 +102,23 @@ nav {
 }
 
 /******************
+/* CONTENT STYLES *
+*******************/
+.content {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  flex-grow: 1;
+  padding: 2em;
+  width: 100%;
+}
+
+.content__title {
+  width: fit-content;
+  border-bottom: 1px solid black;
+}
+
+/******************
 /* UTILITY STYLES *
 *******************/
 .flex-col--center {
@@ -104,13 +131,6 @@ nav {
 .flex-row--center {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.flex-row--start {
-  display: flex;
-  justify-content: start;
   align-items: center;
   width: 100%;
 }
