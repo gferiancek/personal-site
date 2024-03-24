@@ -1,0 +1,116 @@
+:root {
+  --text-sm: clamp(1rem, 3vw, 1.5rem);
+  --text-md: clamp(1.5rem, 4vw, 2rem);
+  --text-lg: clamp(2rem, 5vw, 4rem);
+  --color-primary: hsl(160, 50%, 40%);
+  --color-primary-dark: hsl(160, 50%, 20%);
+  --color-on-primary: white;
+  --color-content: white;
+  --color-on-content: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*****************
+/* LAYOUT STYLES *
+******************/
+body {
+  height: 100svh;
+  font-family: sans-serif;
+  background-image: url("images/landing.jpg");
+  backdrop-filter: blur(10px);
+  background-size: cover;
+  background-position: center;
+}
+
+header,
+footer {
+  width: 100%;
+}
+
+footer {
+  background-color: hsla(0, 10%, 10%, 75%);
+}
+
+
+/**************
+/* NAV STYLES *
+***************/
+nav {
+  padding: 1em;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 0.5em;
+  font-weight: bold;
+  margin-right: 0.5em;
+  font-size: var(--text-sm);
+  transition: color 200ms, background-color 200ms;
+}
+
+.nav-link:last-of-type {
+  margin-right: 0;
+}
+
+.nav-link:hover,
+.selected {
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+}
+
+.nav-link:active {
+  background-color: var(--color-primary-dark);
+}
+
+.nav-icon {
+  font-size: var(--text-md);
+}
+
+/******************
+/* LANDING STYLES *
+*******************/
+.landing {
+  flex-grow: 1;
+  color: var(--color-on-primary);
+}
+
+.landing__title,
+.landing__text {
+  margin: 0.5em;
+}
+
+.landing__title {
+  font-size: var(--text-lg);
+}
+
+.landing__text {
+  font-size: var(--text-sm);
+}
+
+/******************
+/* UTILITY STYLES *
+*******************/
+.flex-col--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-row--start {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}

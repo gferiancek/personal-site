@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+  <script src="https://kit.fontawesome.com/ef74063778.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
-<body>
 
+<body class="flex-col--center">
+  <header>
+    <nav class="flex-row--start">
+      <a class="nav-link selected" href="">HOME</a>
+      <a class="nav-link" href="">ABOUT</a>
+      <a class="nav-link" href="">PORTFOLIO</a>
+      <a class="nav-link" href="">RESUME</a>
+    </nav>
+  </header>
+
+  <main class="landing flex-col--center">
+    <h1 class="landing__title">Gavin Feriancek</h1>
+    <h2 class="landing__text">Software Engineer</h2>
+    <p class="landing__text">HTML | CSS | Javascript</p>
+    <p class="landing__text"><i class="fa-solid fa-location-dot"></i> Hampton Roads, VA</p>
+  </main>
+
+  <footer>
+    <nav class="flex-row--center" aria-label="social links">
+      <a class="nav-link nav-icon" href="https://www.linkedin.com/in/gavin-feriancek/" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a class="nav-link nav-icon" href="https://github.com/gferiancek" aria-label="Github">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a class="nav-link nav-icon" href="mailto:gferiancek@gmail.com" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </nav>
+  </footer>
 </body>
+
 </html>
