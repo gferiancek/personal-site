@@ -10,32 +10,88 @@
   <title>Portfolio - Gavin Feriancek</title>
 </head>
 
-<body class="flex-col--center">
-  <div class="content-container flex-col--center">
+<body>
+  <div class="container">
     <header>
-      <nav class="nav flex-row--center">
-        <a class="nav-link" href="index.html">HOME</a>
-        <a class="nav-link" href="about.html">ABOUT</a>
-        <a class="nav-link selected" href="">PORTFOLIO</a>
-        <a class="nav-link" href="">RESUME</a>
-        <a class="nav-link" href="contact.html">CONTACT</a>
+      <nav class="nav">
+        <a class="nav__link text--sm" href="index.html">HOME</a>
+        <a class="nav__link text--sm" href="about.html">ABOUT</a>
+        <a class="nav__link text--sm selected" href="">PORTFOLIO</a>
+        <a class="nav__link text--sm" href="">RESUME</a>
       </nav>
     </header>
 
     <main class="content">
-      <h1 class="content__title">Title</h1>
+      <h2 class="content__title text--md">Project Portfolio</h2>
+      <section class="grid">
+        <div class="card">
+          <img class="card__img" src="images/placeholder.svg" alt="">
+
+          <div class="card__text">
+            <h3 class="text--sm">Example Project 1</h3>
+            <p class="card__subtitle text--xsm">Technologies Used: HTML, CSS</p>
+            <p class="text--xsm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facere doloremque illo blanditiis
+              praesentium a repellat vitae sit dolores. Saepe optio consequuntur ut quos ullam obcaecati repellendus
+              possimus. Beatae, pariatur?
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card__img" src="images/placeholder.svg" alt="">
+
+          <div class="card__text">
+            <h3 class="text--sm">Example Project 2</h3>
+            <p class="card__subtitle text--xsm">Technologies Used: HTML, CSS</p>
+            <p class="text--xsm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facere doloremque illo blanditiis
+              praesentium a repellat vitae sit dolores. Saepe optio consequuntur ut quos ullam obcaecati repellendus
+              possimus. Beatae, pariatur?
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card__img" src="images/placeholder.svg" alt="">
+
+          <div class="card__text">
+            <h3 class="text--sm">Example Project 3</h3>
+            <p class="card__subtitle text--xsm">Technologies Used: HTML, CSS</p>
+            <p class="text--xsm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facere doloremque illo blanditiis
+              praesentium a repellat vitae sit dolores. Saepe optio consequuntur ut quos ullam obcaecati repellendus
+              possimus. Beatae, pariatur?
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card__img" src="images/placeholder.svg" alt="">
+
+          <div class="card__text">
+            <h3 class="text--sm">Example Project 4</h3>
+            <p class="card__subtitle text--xsm">Technologies Used: HTML, CSS</p>
+            <p class="text--xsm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facere doloremque illo blanditiis
+              praesentium a repellat vitae sit dolores. Saepe optio consequuntur ut quos ullam obcaecati repellendus
+              possimus. Beatae, pariatur?
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
   <footer>
-    <nav class="flex-row--center" aria-label="social links">
-      <a class="nav-link nav-icon" href="https://www.linkedin.com/in/gavin-feriancek/" aria-label="LinkedIn">
+    <nav class="nav transparent" aria-label="social links">
+      <a class="nav__link text--md" href="https://www.linkedin.com/in/gavin-feriancek/" aria-label="LinkedIn">
         <i class="fa-brands fa-linkedin"></i>
       </a>
-      <a class="nav-link nav-icon" href="https://github.com/gferiancek" aria-label="Github">
+      <a class="nav__link text--md" href="https://github.com/gferiancek" aria-label="Github">
         <i class="fa-brands fa-github"></i>
       </a>
-      <a class="nav-link nav-icon" href="mailto:gferiancek@gmail.com" aria-label="Email">
+      <a class="nav__link text--md" href="mailto:gferiancek@gmail.com" aria-label="Email">
         <i class="fa-solid fa-envelope"></i>
       </a>
     </nav>

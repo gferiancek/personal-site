@@ -1,12 +1,15 @@
 :root {
+  --text-xsm: clamp(0.8rem, 2vw, 1rem);
   --text-sm: clamp(0.8rem, 3vw, 1.5rem);
-  --text-md: clamp(1.5rem, 4vw, 2rem);
+  --text-md: clamp(2rem, 4vw, 2.5rem);
   --text-lg: clamp(2rem, 5vw, 3rem);
   --color-primary: hsl(160, 50%, 40%);
   --color-primary-dark: hsl(160, 50%, 20%);
   --color-on-primary: white;
   --color-content: hsl(0, 0%, 90%);
+  --color-content-shadow: hsl(0, 0%, 80%);
   --color-on-content: black;
+  --color-text-muted: hsl(210, 15%, 70%);
 }
 
 * {
@@ -17,18 +20,14 @@
 /* LAYOUT STYLES *
 ******************/
 body {
+  display: flex;
+  flex-direction: column;
   height: 100svh;
   font-family: sans-serif;
   background-image: url("images/landing.jpg");
-  backdrop-filter: blur(10px);
   background-size: cover;
   background-position: center;
-}
-
-.content-container {
-  background-color: var(--color-content);
-  width: clamp(300px, 100%, 1200px);
-  height: 100%;
+  background-attachment: fixed;
 }
 
 header,
@@ -36,29 +35,52 @@ footer {
   width: 100%;
 }
 
+header {
+  position: sticky;
+  top: 0;
+}
+
 footer {
   background-color: hsla(0, 10%, 10%, 75%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-content);
+  align-self: center;
+  flex-grow: 1;
+  width: clamp(300px, 100%, 1400px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  height: 100%;
+  width: 100%;
+}
+
+.content__title {
+  width: fit-content;
+  align-self: flex-start;
+  border-bottom: 1px solid black;
 }
 
 /**************
 /* NAV STYLES *
 ***************/
 .nav {
-  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   background-color: var(--color-primary-dark);
-
-  /* Used for making nav links fit on mobile. Collapsing toolbar would
-  be ideal, but this will work for now. */
-  column-gap: clamp(0.5em, 2vw, 3em);
 }
 
-.nav--transparent {
-  background-color: transparent;
-}
-
-.nav-link {
+.nav__link {
   padding: 0.5em;
-  font-size: var(--text-sm);
   color: var(--color-primary);
   border-radius: 5px;
   font-weight: bold;
@@ -66,71 +88,103 @@ footer {
   transition: color 200ms, background-color 200ms;
 }
 
-.nav-link:hover,
+.nav__link:hover,
 .selected {
   color: var(--color-on-primary);
   background-color: var(--color-primary);
 }
 
-.nav-link:active {
+.nav__link:active {
   background-color: var(--color-primary-dark);
-}
-
-.nav-icon {
-  font-size: var(--text-md);
 }
 
 /******************
 /* LANDING STYLES *
 *******************/
 .landing {
-  flex-grow: 1;
+  justify-content: center;
   color: var(--color-on-primary);
 }
 
-.landing__title,
-.landing__text {
+.landing .landing__title {
+  margin: 0;
+}
+
+/*************************
+/* PORTFOLIO GRID STYLES *
+**************************/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  width: 100%;
+  gap: 2em;
+}
+
+@media only screen and (min-width:600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px var(--color-content-shadow);
+}
+
+.card__text {
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  color: var(--color-on-content);
+}
+
+.card__title {
+  margin-bottom: 0.5em;
+}
+
+.card__subtitle {
+  margin: 0;
+  font-size: var(--text-xsm);
+  color: var(--color-text-muted);
+}
+
+.card__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*******************
+/* UTILITY CLASSES *
+********************/
+.transparent {
+  background-color: transparent;
+}
+
+.text--xsm {
   margin: 0.5em;
+  font-size: var(--text-xsm);
 }
 
-.landing__title {
-  font-size: var(--text-lg);
-}
-
-.landing__text {
+.text--sm {
+  margin: 0.5em;
   font-size: var(--text-sm);
 }
 
-/******************
-/* CONTENT STYLES *
-*******************/
-.content {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  flex-grow: 1;
-  padding: 2em;
-  width: 100%;
+.text--md {
+  margin: 1em;
+  font-size: var(--text-md);
 }
 
-.content__title {
-  width: fit-content;
-  border-bottom: 1px solid black;
-}
-
-/******************
-/* UTILITY STYLES *
-*******************/
-.flex-col--center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-row--center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.text--lg {
+  margin: 1em;
+  font-size: var(--text-lg);
 }
