@@ -10,32 +10,62 @@
   <title>About - Gavin Feriancek</title>
 </head>
 
-<body class="flex-col--center">
-  <div class="content-container flex-col--center">
+<body>
+  <div class="container">
     <header>
-      <nav class="nav flex-row--center">
-        <a class="nav-link" href="index.html">HOME</a>
-        <a class="nav-link selected" href="about.html">ABOUT</a>
-        <a class="nav-link" href="portfolio.html">PORTFOLIO</a>
-        <a class="nav-link" href="">RESUME</a>
-        <a class="nav-link" href="contact.html">CONTACT</a>
+      <nav class="nav">
+        <a class="nav__link text--sm" href="index.html">HOME</a>
+        <a class="nav__link text--sm selected" href="about.html">ABOUT</a>
+        <a class="nav__link text--sm" href="portfolio.html">PORTFOLIO</a>
+        <a class="nav__link text--sm" href="">RESUME</a>
       </nav>
     </header>
 
     <main class="content">
-      <h1 class="content__title">Title</h1>
+      <h1 class="content__title text--lg">About Me</h1>
+
+      <section class="profile">
+
+        <figure class="quote">
+          <blockquote class="quote__block text--sm">
+            <p><q>We cannot change what arises, only how we greet it.</q></p>
+          </blockquote>
+          <figcaption class="text--xsm">- Senses Fail, <cite>Buddy Nielson</cite></figcaption>
+        </figure>
+
+        <h3 class="profile__title text--md">Hi, I'm Gavin</h3>
+        <img class="profile-img" src="images/profile.jpg" alt="">
+        <p class="text--sm">
+          Originally from Minnesota, I'm now a resident of the southern portion
+          of the Hampton Roads area in Virginia. I'm currently working on transitioning
+          into a Software Engineering role with the help of
+          <a class="link-text" href="https://www.rithmschool.com">Rithm School</a>.
+          <br>
+          <br>
+          In my previous roles, I've been responsible for monitoring warehouse production and operations, ensuring
+          smooth workflows. I've also been instrumental in resolving any issues that arise, employing effective
+          escalation strategies when necessary. Moreover, my experience working alongside robots and machinery on
+          production lines has honed my problem-solving skills, enabling me to tackle challenges efficiently.
+          <br>
+          <br>
+          In my free time, I enjoy reading manga and fantasy/sci-fi novels
+          and am an avid fan of RPGs. I occasionally visit family in the Vegas
+          area and can't make the trip without taking a hike through the
+          surrounding canyons!
+        </p>
+      </section>
     </main>
   </div>
 
   <footer>
-    <nav class="flex-row--center" aria-label="social links">
-      <a class="nav-link nav-icon" href="https://www.linkedin.com/in/gavin-feriancek/" aria-label="LinkedIn">
+    <nav class="nav transparent" aria-label="social links">
+      <a class="nav__link text--md" href="https://www.linkedin.com/in/gavin-feriancek/" aria-label="LinkedIn">
         <i class="fa-brands fa-linkedin"></i>
       </a>
-      <a class="nav-link nav-icon" href="https://github.com/gferiancek" aria-label="Github">
+      <a class="nav__link text--md" href="https://github.com/gferiancek" aria-label="Github">
         <i class="fa-brands fa-github"></i>
       </a>
-      <a class="nav-link nav-icon" href="mailto:gferiancek@gmail.com" aria-label="Email">
+      <a class="nav__link text--md" href="mailto:gferiancek@gmail.com" aria-label="Email">
         <i class="fa-solid fa-envelope"></i>
       </a>
     </nav>
